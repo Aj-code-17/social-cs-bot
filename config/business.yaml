@@ -1,0 +1,45 @@
+# ============================================================
+#  BUSINESS INFORMATION — this is the ONLY source of truth
+#  the bot is allowed to answer from. Fill it in for your client.
+#  If it isn't written here, the bot won't invent it.
+# ============================================================
+
+business_name: "Bloom & Co. Salon"
+
+# How the bot should sound. Be specific!
+brand_tone: "Friendly & casual, light emoji use (max 1 emoji per message), warm and welcoming"
+
+hours: "Mon–Sat 10am–8pm, closed on Sundays"
+
+location: "123 Main Boulevard, Gulberg III, Lahore"
+
+pricing: |
+  Haircut: Rs 1,500
+  Hair coloring: from Rs 4,000
+  Manicure: Rs 1,200
+  Pedicure: Rs 1,800
+  Facial: from Rs 2,500
+
+services:
+  - Haircuts & styling
+  - Hair coloring & keratin treatments
+  - Manicures & pedicures
+  - Facials & skincare
+
+policies: |
+  Cancellations are free up to 24 hours before the appointment.
+  No-shows may be asked for a deposit for their next booking.
+  Retail products can be exchanged within 7 days with a receipt.
+
+booking_link: "https://bloomandco.booking.example.com"
+
+# Common Q&A the client provides. Add as many as you like.
+faqs:
+  - q: "Do I need an appointment or can I walk in?"
+    a: "Walk-ins are welcome, but appointments get priority."
+  - q: "Do you offer services for men?"
+    a: "Yes! Haircuts, coloring and facials are for everyone."
+  - q: "Is parking available?"
+    a: "Yes, there's free parking behind the building."
+  - q: "Do you offer bridal packages?"
+    a: "Yes, we do bridal hair and makeup — pricing depends on the package, so it's best to call us for a quote."
