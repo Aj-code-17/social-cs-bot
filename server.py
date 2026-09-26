@@ -117,15 +117,25 @@ def _dispatch_event(event: dict, platform: str) -> None:
 
     text = (message.get("text") or "").strip()
     if text:
+        # --- THE ESCAPE HATCH ---
+        if text.lower() == "/resume":
+            memory.clear_pause(sender_id)
+            meta.send_text(sender_id, "🤖 AI auto-replies resumed. I am back!")
+            log.info("Chat %s manually resumed via DM command", sender_id)
+            return
+        # ------------------------
+
         log.info("[%s] %s: %s", platform, sender_id, text)
         if memory.is_paused(sender_id):
             memory.add_message(sender_id, "user", text)
             log.info("Chat %s is paused for human — message stored only", sender_id)
             return
+        
         _buffers.setdefault(sender_id, []).append(text)
         task = _tasks.get(sender_id)
         if task is None or task.done():
             _tasks[sender_id] = asyncio.create_task(_reply_loop(sender_id))
+            
     elif message.get("attachments"):
         # Photo / voice / video: we can't read it — acknowledge naturally.
         if memory.is_paused(sender_id):
