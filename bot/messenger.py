@@ -10,7 +10,7 @@ import requests
 
 log = logging.getLogger("messenger")
 
-GRAPH = "https://graph.instagram.com/v21.0"
+GRAPH = "https://graph.facebook.com/v21.0"
 
 
 class MetaClient:
